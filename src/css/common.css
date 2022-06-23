@@ -16,3 +16,50 @@ img {
   display: block;
   max-width: 100%;
 }
+button {
+  margin: 0 20px;
+  width: 11em;
+  height: 50px;
+  background: #d08770;
+  color: #eceff4;
+  text-transform: uppercase;
+  border: 0;
+  box-shadow: 12px 12px 1px 1px rgba(76, 86, 106, 0.2);
+}
+
+button:disabled {
+  margin: 0 20px;
+  background: #d8dee9;
+  color: #434c5e;
+  box-shadow: none;
+}
+
+input {
+  height: 50px;
+  text-align: center;
+  font-size: large;
+}
+
+.boxElement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+
+  font-size: x-large;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.timer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
