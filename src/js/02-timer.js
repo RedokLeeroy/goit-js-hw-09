@@ -7,6 +7,7 @@ const hourREF = document.querySelector("[data-hours]");
 const minuteREF = document.querySelector("[data-minutes]");
 const secondREF = document.querySelector("[data-seconds]"); 
 let currtimeREF  = new Date().getTime();
+const pick = document.querySelector("#datetime-picker");
 
 startBtn.disabled = true; 
 let selectedTime = null;
@@ -32,6 +33,7 @@ startBtn.addEventListener("click", startHendler)
 function startHendler(event) {
     event.preventDefault()
     timeId = setInterval(()=>{
+        pick.disabled = true
         let res = selectedTime.getTime() - new Date().getTime()
         const {days, hours, minutes, seconds} = convertMs(res)
         dayREF.textContent = `${days}`
@@ -40,6 +42,7 @@ function startHendler(event) {
         secondREF.textContent = `${seconds}`
         if(seconds < 1) {
             clearInterval(timeId)
+            pick.disabled = false
             startBtn.disabled = false
         }
     },1000)
