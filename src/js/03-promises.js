@@ -6,7 +6,7 @@ const step = document.querySelector("[name = 'step']");
 const amount = document.querySelector("[name = 'amount']");
 const form = document.querySelector(".form");
 
-function createPromise(index, newdelay) {
+function createPromise(index, delay) {
   return new Promise ((resolve, reject) => {
     const shouldResolve = Math.random() > 0.3;
     setTimeout(()=> {  
@@ -15,7 +15,7 @@ function createPromise(index, newdelay) {
   } else {
     reject({index, delay})
   }
-}, newdelay)
+}, delay)
 });
 }
 
