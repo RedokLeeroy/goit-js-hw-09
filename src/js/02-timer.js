@@ -35,12 +35,16 @@ function startHendler(event) {
     timeId = setInterval(()=>{
         pick.disabled = true
         let res = selectedTime.getTime() - new Date().getTime()
-        const {days, hours, minutes, seconds} = convertMs(res)
+        let {days, hours, minutes, seconds} = convertMs(res)
+        days = days < 10 ? "0" + days : days;
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
         dayREF.textContent = `${days}`
         hourREF.textContent = `${hours}`
         minuteREF.textContent = `${minutes}`
         secondREF.textContent = `${seconds}`
-        if(seconds < 1) {
+        if(seconds <= 0) {
             clearInterval(timeId)
             pick.disabled = false
             startBtn.disabled = false
